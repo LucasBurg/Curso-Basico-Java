@@ -32,6 +32,8 @@ public class Principal {
 		
 		if (idade >= 18) {
 			System.out.println("Você é de maior!!!");
+		} else {
+			System.out.println("Você é de menor!!!");
 		}
 		
 		imc = peso / (altura * altura);
@@ -49,6 +51,10 @@ public class Principal {
 		} else {
 			System.out.println("Você está gordinho");
 		}
+		
+		
+		
+		
 	}
 }
 
