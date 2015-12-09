@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Principal {
 
 	public static void main(String[] args) {
-		List alunos = new ArrayList();
+		List<String> alunos = new ArrayList<String>();
 		Scanner leitor = new Scanner(System.in);
 		String nome = "sair";
 		int sizeAlunos = 0;
