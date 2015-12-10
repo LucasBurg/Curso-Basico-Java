@@ -53,6 +53,8 @@ public class Principal {
 		
 		sizeAnimais = animais.size();
 		
+		System.out.println("Quantidade de animais: " + sizeAnimais);
+		
 		Iterator<String> it = animais.iterator();
 		
 		while (it.hasNext()) {
