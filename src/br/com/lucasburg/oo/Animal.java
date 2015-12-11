@@ -77,7 +77,7 @@ public class Animal {
 
 	public void printStatusFome(){
 		String fome = (isComFome()) ? "Sim" : "Não";
-		System.out.printf("O %s chamado %s está com fome ? %s", especie, nome, fome);
+		System.out.printf("O %s chamado %s está com fome ? %s%n", especie, nome, fome);
 	}
 	
 }

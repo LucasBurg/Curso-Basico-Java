@@ -5,4 +5,10 @@ public class Empresa {
 	public int ano;
 	public String cnpj;
 	public static boolean ativa;
+	
+	
+	public static String cnpj(Empresa empresa){
+		return empresa.cnpj;
+	}
+	
 }

@@ -22,19 +22,19 @@ public class Principal {
 		}
 		
 		Empresa empresa1 = new Empresa();
-		
 		empresa1.nome = "Buum Digital";
 		empresa1.ano  = 2013;
-
 		System.out.println("Nome da empresa: " + empresa1.nome + " Ano: " +empresa1.ano + " Ativa: " + Empresa.ativa);
 		
 		Empresa empresa2 = new Empresa();
-		
 		empresa2.nome = "Circulos";
 		empresa2.ano  = 2015;
-		
+		empresa2.cnpj = "123.123.123 000 /";
 		System.out.println("Nome da empresa: " + empresa2.nome + " Ano: " +empresa2.ano + " Ativa: " + Empresa.ativa);
 
+		//método estatico
+		System.out.println(Empresa.cnpj(empresa2));
+		
 		
 	}
 
