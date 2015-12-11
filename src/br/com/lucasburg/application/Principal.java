@@ -5,13 +5,17 @@ import br.com.lucasburg.oo.Animal;
 public class Principal {
 
 	public static void main(String[] args) {
-		Animal gato = new Animal();
-		
-		gato.nome = "Bolinha";
-		gato.idade = 8;
-		gato.raca = "Amarelo";
-		
-		System.out.printf("O %s está com fome ? %s", gato.nome, gato.comFome());
+		try {
+			Animal gato = new Animal();
+			gato.setEspecie("Gato");
+			gato.setNome("Malhado");
+			gato.setIdade(8);
+			gato.setRaca("Amarelo");
+			gato.setComFome(true);
+			gato.printStatusFome();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
