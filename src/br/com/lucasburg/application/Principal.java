@@ -1,5 +1,6 @@
 package br.com.lucasburg.application;
 
+import br.com.lucasburg.conexao.Conexao;
 import br.com.lucasburg.oo.Animal;
 import br.com.lucasburg.statics.Empresa;
 
@@ -17,9 +18,13 @@ public class Principal {
 			gato.setRaca("Amarelo");
 			gato.setComFome(true);
 			gato.printStatusFome();
+			gato.fazerBarulho();
+			gato.fazerBarulho("Miauu Miauuu");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		System.out.println("-----------------------------------------------");
 		
 		Empresa empresa1 = new Empresa();
 		empresa1.nome = "Buum Digital";
@@ -32,10 +37,17 @@ public class Principal {
 		empresa2.cnpj = "123.123.123 000 /";
 		System.out.println("Nome da empresa: " + empresa2.nome + " Ano: " +empresa2.ano + " Ativa: " + Empresa.ativa);
 
-		//método estatico
+		/**
+		 * Método estatico
+		 */
 		System.out.println(Empresa.cnpj(empresa2));
+		System.out.println("-----------------------------------------------");
 		
+		//construtor
+		Conexao conexao = new Conexao("done");
 		
+		System.out.println(conexao.status);
+	
 	}
 
 }
