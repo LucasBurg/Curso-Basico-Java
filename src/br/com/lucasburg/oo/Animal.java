@@ -80,4 +80,12 @@ public class Animal {
 		System.out.printf("O %s chamado %s está com fome ? %s%n", especie, nome, fome);
 	}
 	
+	public void fazerBarulho(){
+		System.out.printf("O %s AHAA AHAA%n", especie);
+	}
+	
+	public void fazerBarulho(String barulho){
+		System.out.printf("O %s %s%n", especie, barulho);
+	}
+	
 }
