@@ -1,6 +1,7 @@
 package br.com.lucasburg.application;
 
 import br.com.lucasburg.conexao.Conexao;
+import br.com.lucasburg.heranca.Fisica;
 import br.com.lucasburg.oo.Animal;
 import br.com.lucasburg.statics.Empresa;
 
@@ -45,9 +46,15 @@ public class Principal {
 		
 		//construtor
 		Conexao conexao = new Conexao("done");
-		
 		System.out.println(conexao.status);
-	
+		System.out.println("-----------------------------------------------");
+		/**
+		 * Herança
+		 */
+		Fisica pessoa = new Fisica("064.807.259-21", "Lucas Daniel Burg Mota");
+		
+		System.out.println(pessoa.getCpf());
+		
 	}
 
 }
