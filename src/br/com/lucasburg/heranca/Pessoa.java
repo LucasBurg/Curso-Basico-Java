@@ -1,6 +1,6 @@
 package br.com.lucasburg.heranca;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements IPessoa {
 	private int id;
 	private boolean ativo;
 	private int idade;
