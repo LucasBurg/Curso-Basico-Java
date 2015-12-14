@@ -1,11 +1,10 @@
 package br.com.lucasburg.heranca;
 
-public class Fisica extends Cliente {
+public final class Fisica extends Cliente {
 	private String cpf;
 	
-	
-	public Fisica(String cpf, String nome) {
-		super(nome);
+	public Fisica(String cpf) {
+		super();
 		this.cpf = cpf;
 	}
 
@@ -17,4 +16,14 @@ public class Fisica extends Cliente {
 		this.cpf = cpf;
 	}
 	
+	@Override
+	public void printInfos(){
+		System.out.printf("%s %s ingressou em %d, portador do CPF %s%n", 
+				super.getNome(), 
+				super.getSobreNome(), 
+				this.getAnoIngresso(),
+				this.getCpf());
+	}
+	
+
 }

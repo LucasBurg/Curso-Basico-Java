@@ -2,6 +2,7 @@ package br.com.lucasburg.application;
 
 import br.com.lucasburg.conexao.Conexao;
 import br.com.lucasburg.heranca.Fisica;
+import br.com.lucasburg.heranca.Juridica;
 import br.com.lucasburg.oo.Animal;
 import br.com.lucasburg.statics.Empresa;
 
@@ -44,16 +45,34 @@ public class Principal {
 		System.out.println(Empresa.cnpj(empresa2));
 		System.out.println("-----------------------------------------------");
 		
-		//construtor
+		/**
+		 * Construtor
+		 */
 		Conexao conexao = new Conexao("done");
 		System.out.println(conexao.status);
 		System.out.println("-----------------------------------------------");
+		
 		/**
 		 * Herança
+		 * Fisica extends Cliente
 		 */
-		Fisica pessoa = new Fisica("064.807.259-21", "Lucas Daniel Burg Mota");
+		System.out.println("-----------------------------------------------");
 		
-		System.out.println(pessoa.getCpf());
+		
+		Fisica pessoa = new Fisica("064.807.259-21");
+		pessoa.setNome("Lucas");
+		pessoa.setAnoIngresso(2013);
+		pessoa.setSobreNome("Burg");
+		pessoa.setSexo("M");
+		pessoa.printInfos();
+		
+		System.out.println("-----------------------------------------------");
+		
+		Juridica fornecedor = new Juridica();
+		fornecedor.setCnpj("33.818.136/0001-62");
+		fornecedor.setNome("Buum Digital");
+		fornecedor.setAnoIngresso(1990);
+		fornecedor.printInfos();
 		
 	}
 
