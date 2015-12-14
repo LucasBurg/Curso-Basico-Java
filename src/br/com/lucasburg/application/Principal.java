@@ -1,8 +1,11 @@
 package br.com.lucasburg.application;
 
+import br.com.lucasburg.classes.PrincipaisClasses;
 import br.com.lucasburg.conexao.Conexao;
+import br.com.lucasburg.heranca.Cliente;
 import br.com.lucasburg.heranca.Fisica;
 import br.com.lucasburg.heranca.Juridica;
+import br.com.lucasburg.heranca.Pessoa;
 import br.com.lucasburg.oo.Animal;
 import br.com.lucasburg.statics.Empresa;
 
@@ -73,6 +76,29 @@ public class Principal {
 		fornecedor.setNome("Buum Digital");
 		fornecedor.setAnoIngresso(1990);
 		fornecedor.printInfos();
+		
+		System.out.println("-----------------------------------------------");
+		
+		/**
+		 * Polimorfismo 
+		 */
+		Pessoa cliente = new Cliente();
+		
+		cliente.setNome("Lucas");
+		//cliente.setAnoIngresso(2010);
+		cliente.setId(39429);
+		cliente.setSexo("M");
+		cliente.printInfos();
+		
+		/**
+		 * Teste das principais classes
+		 */
+		System.out.println("================================================");
+		PrincipaisClasses teste = new PrincipaisClasses();
+		teste.testInt();
+		System.out.println("================================================");
+		teste.testDouble();
+		
 		
 	}
 
