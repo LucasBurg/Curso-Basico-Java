@@ -1,7 +1,13 @@
 package br.com.lucasburg.application;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.sql.ConnectionEvent;
+
 import br.com.lucasburg.classes.PrincipaisClasses;
 import br.com.lucasburg.conexao.Conexao;
+import br.com.lucasburg.database.FabricaConexao;
 import br.com.lucasburg.heranca.Cliente;
 import br.com.lucasburg.heranca.Fisica;
 import br.com.lucasburg.heranca.Juridica;
@@ -99,6 +105,20 @@ public class Principal {
 		System.out.println("================================================");
 		teste.testDouble();
 		
+		/**
+		 * Conexão com o banco de dados
+		 */
+		try {
+			Connection conn = FabricaConexao.criar();
+			
+			System.out.println(conn.getClientInfo());
+			
+			conn.close();
+			
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
