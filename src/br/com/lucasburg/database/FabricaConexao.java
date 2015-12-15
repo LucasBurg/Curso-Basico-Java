@@ -9,7 +9,7 @@ public class FabricaConexao {
 	public static Connection criar()
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		String stringConexao = "jdbc:mysql://127.0.0.1/cursojavabasico?user=root&password=96342292";
+		String stringConexao = "jdbc:mysql://127.0.0.1/cursojavabasico?useSSL=false&user=root&password=96342292";
 		return DriverManager.getConnection(stringConexao);
 	}
 

@@ -1,13 +1,17 @@
 package br.com.lucasburg.application;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import javax.sql.ConnectionEvent;
 
 import br.com.lucasburg.classes.PrincipaisClasses;
 import br.com.lucasburg.conexao.Conexao;
 import br.com.lucasburg.database.FabricaConexao;
+import br.com.lucasburg.database.Select;
 import br.com.lucasburg.heranca.Cliente;
 import br.com.lucasburg.heranca.Fisica;
 import br.com.lucasburg.heranca.Juridica;
@@ -108,17 +112,68 @@ public class Principal {
 		/**
 		 * Conexão com o banco de dados
 		 */
+		
+		System.out.println("================================================");
+		System.out.println("*** Cadastro de usuário ***");
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Informe o nome do usuário: ");
+		String nome = leitor.nextLine();
+
+		System.out.print("Informe o e-mail do usuário: ");
+		String email = leitor.nextLine();
+		
+		leitor.close();
+		
+		Connection conn = null;
+		
 		try {
-			Connection conn = FabricaConexao.criar();
-			
-			System.out.println(conn.getClientInfo());
-			
-			conn.close();
-			
+			conn = FabricaConexao.criar();
+			String sql = "insert into usuario(nome, email) values(?, ?)";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, nome);
+			stmt.setString(2, email);
+			int status = stmt.executeUpdate();
+			System.out.println("Status do stmt: " + status);
+			if (status == 1) {
+				System.out.println("Usuário criado com sucesso!!");
+			} else {
+				System.out.println("Algum error ocorreu ao salvar o usuário :(");
+			}
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		Select select = new Select(conn);
+		
+		try {
+			ResultSet result = select.execute("select * from usuario");
+			
+			while (result.next()) {
+				System.out.printf("%d - %s - %s%n*******%n", result.getInt("id"), result.getString("nome"), result.getString("email"));
+			}
+			
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Fim Cadastro Usuário =========================");
 		
 	}
 
