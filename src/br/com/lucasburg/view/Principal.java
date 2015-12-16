@@ -1,9 +1,5 @@
 package br.com.lucasburg.view;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -48,10 +44,10 @@ public class Principal {
 		 * Campo senha
 		 */
 		JLabel labelSenha = new JLabel("Senha: ");
-		labelSenha.setBounds(220, 10, 50, 20);
+		labelSenha.setBounds(10, 30, 50, 20);
 
 		JPasswordField fieldSenha = new JPasswordField();
-		fieldSenha.setBounds(275, 10, 150, 20);
+		fieldSenha.setBounds(65, 30, 150, 20);
 		
 		panel.add(labelSenha);
 		panel.add(fieldSenha);
@@ -60,12 +56,10 @@ public class Principal {
 		 * Button
 		 */
 		JButton button = new JButton("Entrar");
-		button.setBounds(450, 10, 150, 20);
+		button.setBounds(10, 50, 150, 20);
 		
 		Eventos evento = new Eventos(fieldUsuario);
-		
 		button.addActionListener(evento);
-		
 		panel.add(button);
 		
 		
