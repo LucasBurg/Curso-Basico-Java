@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import javax.sql.ConnectionEvent;
-
 import br.com.lucasburg.classes.PrincipaisClasses;
 import br.com.lucasburg.conexao.Conexao;
 import br.com.lucasburg.database.FabricaConexao;
