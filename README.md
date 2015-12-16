@@ -1,2 +1,2 @@
-# Curso-Basico-Java
-ExercÃ­cios do curso
+# Curso Java Básico
+Exercícios do curso
